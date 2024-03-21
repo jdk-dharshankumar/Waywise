@@ -1,3 +1,17 @@
+<?php
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+   print_r($_POST);
+  $lname= $_POST['lname'];
+
+  // Do something with the received location data, for example, store it in a database
+  // Example: store_location_in_database($latitude, $longitude);
+  
+  // Redirect the user to another page or show a message
+    // echo $origin_latitude.";".$origin_longitude."|";
+    // echo $destination_latitude.";".$destination_latitude;
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,7 +28,14 @@
 
   <input type="hidden" id="destinationLatitudeInput" name="destination_latitude">
   <input type="hidden" id="destinationLongitudeInput" name="destination_longitude">
-  <button type="submit">Search</button>
+  <form action="/action_page.php">
+  <!-- <label for="fname">Origin:</label>
+  <input type="text" id="fname" name="fname"><br><br> -->
+  <label for="lname">Destination:</label>
+  <input type="text" id="lname" name="lname"><br><br>
+  <input type="submit" value="Submit">
+</form>
+  
 </form>
 
 <script>
